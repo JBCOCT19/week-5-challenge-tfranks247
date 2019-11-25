@@ -24,13 +24,13 @@
 <div class="container custom" id="jobBackground">
     <div class="col-2"></div>
     <div class="col-8 content">
-        <a href="/"class="btn btn-primary btn-sm active" role="button">Show All Jobs</a><br />
-        Departing Airport :<span th:text="${job.jobTitle} " class="form-control"></span><br />
-        Arriving Airport :<span th:text="${job.jobDescription} " class="form-control"></span><br />
-        Flight type :<span th:text="${job.postedDate} " class="form-control"></span><br />
-        Price :<span th:text="${job.author} " class="form-control"></span><br />
-        Date :<span th:text="${job.phoneNumber}" class="form-control"></span><br />
-        <a th:href="@{/delete/{id}(id=${job.id})}" class="btn btn-primary btn-sm active" role="button">Delete this Job</a>
+        <a href="/"class="btn btn-danger btn-sm active" role="button">Show All Jobs</a><br />
+        Job Title :<span th:text="${job.jobTitle} " class="form-control"></span><br />
+       Job Description :<span th:text="${job.jobDescription} " class="form-control"></span><br />
+        Date Posted :<span th:text="${job.postedDate} " class="form-control"></span><br />
+        Author :<span th:text="${job.author} " class="form-control"></span><br />
+        Phone Number :<span th:text="${job.phoneNumber}" class="form-control"></span><br />
+        <a th:href="@{/delete/{id}(id=${job.id})}" class="btn btn-danger btn-sm active" role="button">Delete this Job</a>
     </div>
     <div class="col-2"></div>
 

@@ -11,7 +11,7 @@
 
 <div th:replace="base :: navlinks"></div>
 
-<div class="container custom" id="jobBackground">
+<div class="container custom" id=>
 
 
 <div class="jumbotron">
@@ -19,8 +19,8 @@
     <p class="lead text-center">Work, work, work, work, work</p>
     <hr class="my-4">
 </div>
-<div id="" class="custom">
-    <a href="/add"class="btn btn-primary btn-lg active btn-block" role="button">Add a Job</a><br />
+<div id= class="custom">
+    <a href="/add"class="btn btn-danger btn-lg active btn-block" role="button">Add a Job</a><br />
     <table class="table custom">
         <thead class ="thead-dark">
         <tr class="custom">
@@ -42,9 +42,9 @@
             </td>
             <td>
 
-                <a th:href="@{/list/{id}(id=${job.id})}"> <button type="button" class="btn btn-primary btn-sm">list </button> </a> -
+                <a th:href="@{/list/{id}(id=${job.id})}"> <button type="button" class="btn btn-danger btn-sm">list </button> </a> -
 
-                <a th:href="@{/update/{id}(id=${job.id})}"> <button type="button" class="btn btn-primary btn-sm">update </button> </a> -
+                <a th:href="@{/update/{id}(id=${job.id})}"> <button type="button" class="btn btn-danger btn-sm">update </button> </a> -
 
                 <a th:href="@{/delete/{id}(id=${job.id})}"> <button type="button" class="btn btn-dark btn-sm">delete </button> </a>
             </td>
