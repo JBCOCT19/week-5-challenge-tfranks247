@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <style type="text/css">
+        .custom {
+            font-family: Courier;
+            color: white;
+            font-size:15px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="base :: navlinks"></div>
+
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Your Jobs</h1>
+    <p class="lead text-center">Work, work, work, work, work</p>
+    <hr class="my-4">
+</div>
+<div id="" class="custom">
+    <a href="/add"class="btn btn-primary btn-lg active btn-block" role="button">Add a Job</a><br />
+    <table class="table custom">
+        <thead class ="thead-dark">
+        <tr class="custom">
+            <th scope="col">Job Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date Posted</th>
+            <th scope="col">Author</th>
+            <th scope="col">Phone</th>
+        </tr>
+        </thead>
+        <tr th:each="job : ${jobs}" class="custom">
+            <td th:text="${job.jobTitle}"></td>
+            <td th:text="${job.jobDescription}"></td>
+            <td th:text="${job.postedDate}"></td>
+            <td th:text="${job.author}"></td>
+            <td th:text="${job.phoneNumber}"></td>
+            <td>
+                <img th:src="${job.image}">
+            </td>
+            <td>
+
+                <a th:href="@{/list/{id}(id=${job.id})}"> <button type="button" class="btn btn-primary btn-sm">list </button> </a> -
+
+                <a th:href="@{/update/{id}(id=${job.id})}"> <button type="button" class="btn btn-primary btn-sm">update </button> </a> -
+
+                <a th:href="@{/delete/{id}(id=${job.id})}"> <button type="button" class="btn btn-dark btn-sm">delete </button> </a>
+            </td>
+
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

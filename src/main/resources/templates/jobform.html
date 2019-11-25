@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:replace="base :: navlinks"></div>
+
+<div class="jumbotron jumbotron-fluid" style="background-color: white">
+    <div class="container">
+        <h1 class="display-4 text-center">Job Form</h1>
+        <p class="lead text-center">Fill out the form and submit!.</p>
+    </div>
+</div>
+
+<div class="container custom" id="">
+    <div class="col-2"></div>
+    <div class="col-8 content">
+        <form action="#" th:action="@{/process}" th:object="${job}" method="post"
+              enctype="multipart/form-data" class="custom">
+            <input type="hidden" th:field="*{id}" />
+            <input type="hidden" th:field="*{image}" />
+            <input type="hidden" th:field="*{id}" />
+            <span th:if="${#fields.hasErrors('id')}"
+                  th:errors="*{id}"></span>
+            Job Title :<input class="form-control" type="text" th:field="*{jobTitle}"/>
+            <span th:if="${#fields.hasErrors('jobTitle')}"
+                  th:errors="*{jobTitle}"></span><br />
+            Description :<input class="form-control" type="text" th:field="*{jobDescription}" />
+            <span th:if="${#fields.hasErrors('jobDescription')}"
+                  th:errors="*{jobDescription}"></span><br />
+            Date Posted :<input class="form-control" type="date" th:field="*{postedDate}" />
+            <span th:if="${#fields.hasErrors('postedDate')}"
+                  th:errors="*{postedDate}"></span><br />
+            Author :<input class="form-control" type="text" th:field="*{author}" />
+            <span th:if="${#fields.hasErrors('author')}"
+                  th:errors="*{author}"></span><br />
+            Phone Number :<input class="form-control" type="text" th:field="*{phoneNumber}" />
+            <span th:if="${#fields.hasErrors('phoneNumber')}"
+                  th:errors="*{phoneNumber}"></span><br />
+            Image :<input type="file" name="file"/>
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
+
+    </div>
+    <div class="col-2"></div>
+</div>
+
+
+
+
+</body>
+</html>
