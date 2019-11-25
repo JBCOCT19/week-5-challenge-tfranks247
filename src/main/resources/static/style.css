@@ -1,0 +1,17 @@
+#jobBackground{
+    background-image: url("https://i.pinimg.com/736x/3f/fa/46/3ffa463173416a5eea503b949da5f56b.jpg");
+}
+
+.navbar-brand>img {
+    position: relative;
+    background: url("https://cdn.dribbble.com/users/66608/screenshots/769902/clappicon.png");
+    width: 170px;
+    left: 15px;
+    background-size: contain;
+}
+
+.custom {
+    font-family: Impact;
+    color: lightseagreen;
+    font-size:25px;
+}
